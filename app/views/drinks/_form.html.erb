@@ -1,0 +1,35 @@
+<%= form_for(@drink) do |f| %>
+  <% if @drink.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@drink.errors.count, "error") %> prohibited this drink from being saved:</h2>
+
+      <ul>
+      <% @drink.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field" align="center">
+    <%= f.label :name %><br />
+    <%= f.text_field :name %>
+  </div>
+  <div class="field"align="center">
+    <%= f.label :type_id %>
+    <%= f.collection_select :type_id, Type.all, :id, :name%>
+   
+  </div>
+   <div class="field" align="center">
+    <%= f.label :price %><br />
+	<%= f.number_field :price %>
+    
+  </div>
+  <div class="field" align="center">
+    <%= f.label :size %><br />
+    <%= f.select :price, ["330", "500", "568(pint)", "750(wine/vodka/whiskey)"], :include_blank => :true %>
+  </div>
+  <div class="actions"align="center">
+    <%= f.submit %>
+  </div>
+<% end %>

@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+body {
+    background-image: url("../assets/background2.jpg");
+    background-color: #cccccc;
+	
+</style>
+<div id="banner">
+	<%= image_tag("drink2.jpg", :size => "1000x50") %>
+	<p><%= @page_title || "Your favourite drinks" %></p>
+</div>
+
+  <title>Drinkapp</title>
+  <%= stylesheet_link_tag    "application", :media => "all" %>
+  <%= javascript_include_tag "application" %>
+  <%= csrf_meta_tags %>
+  
+  <ul>
+   <li><%= link_to "New users", users_path%></li>
+   <li><%= link_to "Reviews", reviews_path%></li>
+   <li><%= link_to "Drinks", drinks_path%></li>
+   <li><%= link_to "Types", types_path%></li>
+</ul>
+</head>
+
+
+<%= yield %>
+
+</body>
+</html>
