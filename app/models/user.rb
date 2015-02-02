@@ -1,5 +1,5 @@
 class User < ActiveRecord::Base
 
-validates_presence_of :UserName
+validates :Username, presence: true
 has_many :reviews, :dependent => :destroy
 end
