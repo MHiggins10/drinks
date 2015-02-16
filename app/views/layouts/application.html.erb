@@ -3,12 +3,12 @@
 <head>
 <style>
 body {
-    background-image: url("../assets/background2.jpg");
+    background-image: url("../assets/alcohol.jpg");
     background-color: #cccccc;
 	
 </style>
 <div id="banner">
-	<%= image_tag("drink2.jpg", :size => "1000x50") %>
+	<%= image_tag("banner.jpg", :size => "1000x50") %>
 	<p><%= @page_title || "Your favourite drinks" %></p>
 </div>
 
@@ -18,15 +18,37 @@ body {
   <%= csrf_meta_tags %>
   
   <ul>
+  <p>
+  <font size = "3" color = "white">
    <li><%= link_to "New users", users_path%></li>
    <li><%= link_to "Reviews", reviews_path%></li>
    <li><%= link_to "Drinks", drinks_path%></li>
    <li><%= link_to "Types", types_path%></li>
+   </font>
+   </p>
 </ul>
+<ul>
+	<% if !signed_in? %>
+		<li><%= link_to "Sign In", signin_path %></li>		
+	<% else %>
+		<li>Signed in as <%= @current_user.name %></li>
+		<li><%= link_to "Sign Out", signout_path %></li>
+
+	<%end %>
+		 <li><%= link_to "Questions"%></li>
+		
 </head>
 
 
 <%= yield %>
+
+<div id = "footer">
+  <p>App made by: Mark Higgins</p>
+  <p>Name: Drinkapp</p>
+  <p>Git Link: https://github.com/MHiggins10.</p>
+</footer>
+
+
 
 </body>
 </html>
