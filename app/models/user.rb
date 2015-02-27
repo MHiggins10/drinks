@@ -1,7 +1,12 @@
 class User < ActiveRecord::Base
+has_secure_password		     #This is necessary for the Bcrypt gem
 
-validates :Username, presence: true
-has_many :reviews, :dependent => :destroy
+has_many :posts, :dependent => :destroy
 
-mount_Uploader :photo, PhotoUploader
+validates_confirmation_of :password     #Allows you to get a confirmation of a pasword
+
+validates_uniqueness_of :email
+
+	geocoded_by :address
+	after_validation :geocode, :if => :address_changed?
 end

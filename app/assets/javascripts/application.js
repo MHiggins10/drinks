@@ -10,6 +10,17 @@
 // WARNING: THE FIRST BLANK LINE MARKS THE END OF WHAT'S TO BE PROCESSED, ANY BLANK LINE SHOULD
 // GO AFTER THE REQUIRES BELOW.
 //
-//= require jquery
+
+<%= javascript_include_tag "application" %>
+
+$('#datepicker').datepicker({
+	dateFormat: 'dd-mm-yy',
+	changeMonth: true,
+	changeYear: true,
+	yearRange: "-5:+20",	
+});
+
+
+  = require jquery
 //= require jquery_ujs
 //= require_tree .

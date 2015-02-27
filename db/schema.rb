@@ -11,13 +11,23 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20150127154533) do
+ActiveRecord::Schema.define(:version => 20150227162401) do
 
   create_table "drinks", :force => true do |t|
     t.string   "name"
     t.integer  "type_id"
     t.integer  "price"
     t.integer  "size"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
+    t.float    "latitude"
+    t.float    "longitude"
+  end
+
+  create_table "posts", :force => true do |t|
+    t.text     "content"
+    t.integer  "user_id"
+    t.integer  "drink_id"
     t.datetime "created_at", :null => false
     t.datetime "updated_at", :null => false
   end
@@ -38,9 +48,15 @@ ActiveRecord::Schema.define(:version => 20150127154533) do
   end
 
   create_table "users", :force => true do |t|
-    t.string   "username"
-    t.datetime "created_at", :null => false
-    t.datetime "updated_at", :null => false
+    t.string   "name"
+    t.string   "email"
+    t.date     "dob"
+    t.string   "password_digest"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.float    "latitude"
+    t.float    "longitute"
+    t.string   "address"
   end
 
 end

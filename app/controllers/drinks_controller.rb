@@ -9,6 +9,17 @@ class DrinksController < ApplicationController
       format.json { render json: @drinks }
     end
   end
+  
+  def search
+	@drinks = Drink.search params[:q]
+	unless @drinks.empty?		#if !@products.empty?
+		render 'index'	
+	else			
+		flash[:notice] =  'No match drinks that search' 
+		render 'index'
+	
+	end
+end
 
   # GET /drinks/1
   # GET /drinks/1.json
@@ -68,7 +79,7 @@ class DrinksController < ApplicationController
       end
     end
   end
-
+  
   # DELETE /drinks/1
   # DELETE /drinks/1.json
   def destroy
@@ -81,3 +92,6 @@ class DrinksController < ApplicationController
     end
   end
 end
+
+
+

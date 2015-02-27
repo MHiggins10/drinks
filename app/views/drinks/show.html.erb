@@ -14,10 +14,30 @@
   <b>Price:</b>
   <%= @drink.price %>
 </p>
+<p>
+<h2>Please leave a comment:</h2>
+	<%= form_for([@drink, Post.new]) do |f| %>
+  		<%= f.text_area :content, :rows => 3 %>  				<div class="actions">
+			<%= f.submit "Post a Comment"%>
+		</div>
+	<% end %>
 
+	
+<% if @drink.posts.empty? %>
+    <h3>You are the first  to comment </h3>
+<% else %>
+ <h2>What others felt about this:</h2>
+  <% @drink.posts.reverse.each do |post| %>
+	<p><%= post.content %>
+       Posted <%= time_ago_in_words(post.created_at) %> ago by 		
+	   <%= post.user.name %></p>
+   <% end %>
+<% end %>
+
+
+</p>
 <p>
   <b>Size:</b>
-  <%= @drink.size %>
 </p>
 
 
