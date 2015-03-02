@@ -3,14 +3,21 @@
 <head>
 <style>
 body {
+<<<<<<< HEAD
   
 
+=======
+>>>>>>> d322bda64ec39cee8cbe3c2b87e1e4b4ae85a83a
     background-image: url("../assets/alcohol.jpg");
     background-color: #cccccc;
 	
 </style>
 <div id="banner">
+<<<<<<< HEAD
 	<%= image_tag("bottlesl.jpg", :size => "1700x100") %>
+=======
+	<%= image_tag("banner.jpg", :size => "1000x50") %>
+>>>>>>> d322bda64ec39cee8cbe3c2b87e1e4b4ae85a83a
 	<p><%= @page_title || "Your favourite drinks" %></p>
 </div>
   <title>Drinkapp</title>
@@ -27,7 +34,10 @@ body {
    </font>
    </p>
 </ul>
+<<<<<<< HEAD
 
+=======
+>>>>>>> d322bda64ec39cee8cbe3c2b87e1e4b4ae85a83a
 <ul>
 	<% if !signed_in? %>
 		<li><%= link_to "Sign In", signin_path %></li>		
@@ -37,6 +47,7 @@ body {
 
 	<%end %>
 		 <li><%= link_to "Questions"%></li>
+<<<<<<< HEAD
 		 
 <div id="search">
 	<%= render :partial => 'drinks/search' %>
@@ -65,9 +76,21 @@ Click here to display Date and Time.</button>
   <p>Git Link: https://github.com/MHiggins10.</p>
 
 </div>
+=======
+		
+</head>
+>>>>>>> d322bda64ec39cee8cbe3c2b87e1e4b4ae85a83a
 
 
 <%= yield %>
+
+<div id = "footer">
+  <p>App made by: Mark Higgins</p>
+  <p>Name: Drinkapp</p>
+  <p>Git Link: https://github.com/MHiggins10.</p>
+</footer>
+
+
 
 </body>
 </html>

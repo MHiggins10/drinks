@@ -1,6 +1,9 @@
 Drinkapp::Application.routes.draw do
+<<<<<<< HEAD
   resources :posts
 
+=======
+>>>>>>> d322bda64ec39cee8cbe3c2b87e1e4b4ae85a83a
   get "pages/home"
 
   get "pages/about"
@@ -12,6 +15,12 @@ Drinkapp::Application.routes.draw do
 end
 
 
+
+  get "sessions/new"
+
+  get "sessions/create"
+
+  get "sessions/destroy"
 
   get "sessions/new"
 
@@ -31,7 +40,10 @@ end
   match '/signin',  :to => 'sessions#new'
   match '/signout', :to => 'sessions#destroy'
 
+<<<<<<< HEAD
   match '/search', :to => 'drinks#search'
+=======
+>>>>>>> d322bda64ec39cee8cbe3c2b87e1e4b4ae85a83a
 
   # The priority is based upon order of creation:
   # first created -> highest priority.

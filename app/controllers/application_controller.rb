@@ -1,7 +1,10 @@
 class ApplicationController < ActionController::Base
  protect_from_forgery
+<<<<<<< HEAD
  
 	include ApplicationHelper
+=======
+>>>>>>> d322bda64ec39cee8cbe3c2b87e1e4b4ae85a83a
     def authorise
         unless signed_in?
            store_location
@@ -15,6 +18,9 @@ class ApplicationController < ActionController::Base
 
 end
 
+<<<<<<< HEAD
 
 
 
+=======
+>>>>>>> d322bda64ec39cee8cbe3c2b87e1e4b4ae85a83a
