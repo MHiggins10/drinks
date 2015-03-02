@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+body {
+  
+
+    background-image: url("../assets/alcohol.jpg");
+    background-color: #cccccc;
+	
+</style>
+<div id="banner">
+	<%= image_tag("bottlesl.jpg", :size => "1700x100") %>
+	<p><%= @page_title || "Your favourite drinks" %></p>
+	<H1>Welcome to your Drink application</H1>
+</div>
+</body>
+
+
+	
+</div>
+  <title>Drinkapp</title>
+  <%= stylesheet_link_tag    "application", :media => "all" %>
+  <%= javascript_include_tag "application" %>
+  <%= csrf_meta_tags %>
+  <ul>
+  <p>
+  <font size = "3" color = "white">
+   <li><%= link_to "New users", users_path%></li>
+   <li><%= link_to "Reviews", reviews_path%></li>
+   <li><%= link_to "Drinks", drinks_path%></li>
+   <li><%= link_to "Types", types_path%></li>
+   </font>
+   </p>
+</ul>
+
+<ul>
+	<% if !signed_in? %>
+		<li><%= link_to "Sign In", signin_path %></li>		
+	<% else %>
+		<li>Signed in as <%= @current_user.name %></li>
+		<li><%= link_to "Sign Out", signout_path %></li>
+
+	<%end %>
+		 <li><%= link_to "Questions"%></li>
+		 
+<div id="search">
+	<%= render :partial => 'drinks/search' %>
+</div>
+
+<% flash.each do|key, value| %>
+		<div class="flash <%= key %>">
+		<%= value %>
+		</div>
+	<% end %>	
+
+</body>
+<div id = "time" align="right">
+<button type="button"
+onclick="document.getElementById('demo').innerHTML = Date()">
+Click here to display Date and Time.</button>
+
+<p id="demo" ></p>
+</div>
+
+
+
+<div id = "footer" align="right">
+  <p>App made by: Mark Higgins</p>
+  <p>Name: Drinkapp</p>
+  <p>Git Link: https://github.com/MHiggins10.</p>
+
+</div>
+
+
+<%= yield %>
+
+</body>
+</html>
